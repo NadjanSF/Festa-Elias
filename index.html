@@ -5,27 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arraiá da Família Elias</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <style>
     body {
-      background-image: url(https://github.com/NadjanSF/Festa-Elias/blob/main/festa1Capa.jpg?raw=true);
+      font-family: 'Luckiest Guy', cursive;
+      background-image: url('https://github.com/NadjanSF/Festa-Elias/blob/main/festa1Capa.jpg?raw=true');
       background-size: cover;
       background-position: center;
-  background-repeat: no-repeat;
+      background-repeat: no-repeat;
       color: white;
-      text-shadow: 1px 1px 2px black;
+      text-shadow: 1px 1px 3px black;
+      margin: 0;
+      padding: 0;
     }
+
     .w3-container {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.65);
       padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
+      margin: 10px;
+      border-radius: 10px;
     }
-    a, a:visited {
+
+    h1, h2 {
       color: #FFD700;
     }
+
+    a, a:visited {
+      color: #FFDD57;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+    }
+
+    ul.w3-ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.w3-ul li {
+      background: rgba(255, 255, 255, 0.1);
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
     input[type="text"] {
-      padding: 5px;
-      margin-left: 10px;
+      flex: 1;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.5);
+    }
+
+    .btn-junina {
+      display: inline-block;
+      background-color: #FF4500;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin: 5px 10px;
+      transition: 0.3s;
+    }
+
+    .btn-junina:hover {
+      background-color: #FF6347;
+      transform: scale(1.05);
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .galeria img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 2px solid white;
+      transition: 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 1em;
+      color: #FFD700;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        margin-top: 5px;
+      }
     }
   </style>
 </head>
@@ -35,80 +126,56 @@
     <p class="w3-large">Uma festança boa demais da conta, sô!</p>
   </div>
 
-  <div class="w3-container">
-    <h2>Menu</h2>
-    <ul class="w3-ul">
-      <li><a href="#endereco">Endereço</a></li>
-      <li><a href="#galeria">Galeria</a></li>
-      <li><a href="#pratos">Lista de Pratos</a></li>
-      <li><a href="https://wa.me/qr/MZ7VGLOF4LVVE1" target="_blank">Fale conosco no WhatsApp</a></li>
-    </ul>
+  <div class="w3-container w3-center">
+    <a class="btn-junina" href="#endereco">📍 Endereço</a>
+    <a class="btn-junina" href="#galeria">📸 Galeria</a>
+    <a class="btn-junina" href="#pratos">🍲 Pratos</a>
+    <a class="btn-junina" href="https://wa.me/qr/MZ7VGLOF4LVVE1" target="_blank">📱 WhatsApp</a>
   </div>
 
   <div class="w3-container" id="endereco">
-    <h2>Endereço</h2>
-    <p>Casa da Dani?!,- SP</p>
-    <p>Data: á definir - a partir das 19h</p>
+    <h2>📍 Endereço</h2>
+    <p>Casa da Dani?! - SP</p>
+    <p>Data: à definir - a partir das 19h</p>
   </div>
 
   <div class="w3-container" id="galeria">
-    <h2>Galeria de Festas Anteriores</h2>
-<div class="w3-row-padding">
-  <div class="w3-third">
-    <a href="https://github.com/NadjanSF/Festa-Elias/blob/main/festa.001.jpg" target="_blank">
-      <img src="festa.001.jpg" class="w3-image w3-border w3-hover-opacity">
-    </a>
+    <h2>📸 Galeria de Festas Anteriores</h2>
+    <div class="galeria">
+      <a href="https://github.com/NadjanSF/Festa-Elias/blob/main/festa.001.jpg" target="_blank">
+        <img src="festa.001.jpg" alt="festa1">
+      </a>
+      <a href="https://github.com/NadjanSF/Festa-Elias/blob/main/festa1.1.jpg" target="_blank">
+        <img src="festa1.1.jpg" alt="festa2">
+      </a>
+      <a href="https://github.com/NadjanSF/Festa-Elias/blob/main/festa1.jpg" target="_blank">
+        <img src="festa1.jpg" alt="festa3">
+      </a>
+      <a href="https://scontent.fcgh55-1.fna.fbcdn.net/v/t1.6435-9/40495156_10212322840692725_5565804761191546880_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=-omHTHSjH68Q7kNvwEj27VZ&_nc_oc=AdlIKfxt9JH81sseKuDA4KT4Wxk9HsWS3XWmJYLsue6gIZQ7y87vKOUWy1lUmglCEt8&_nc_zt=23&_nc_ht=scontent.fcgh55-1.fna&_nc_gid=ZjCtZSNsJ2cnI4GoTybMCQ&oh=00_AfOjXJH2L41Uq7P5GF0ezb99ZhynAbXZkhEQFDbZvZjGmQ&oe=68714A29" target="_blank">
+        <img src="festa1.jpg" alt="festa4">
+      </a>
+    </div>
   </div>
-  <div class="w3-third">
-    <a href="https://github.com/NadjanSF/Festa-Elias/blob/main/festa1.1.jpg" target="_blank">
-      <img src="festa1.1.jpg" class="w3-image w3-border w3-hover-opacity">
-    </a>
+
+  <div class="w3-container w3-center">
+    <h2>🎥 Vídeo da Festa</h2>
+    <video width="90%" controls>
+      <source src="https://github.com/NadjanSF/Festa-Elias/blob/main/video.mp4" type="video/mp4">
+      Seu navegador não suporta o vídeo.
+    </video>
   </div>
-  <div class="w3-third">
-    <a href="https://github.com/NadjanSF/Festa-Elias/blob/main/festa1.jpg" target="_blank">
-      <img src="festa1.jpg" class="w3-image w3-border w3-hover-opacity">
-    </a>
-  </div>
-  <div class="w3-container">
-  <h2>Vídeo da Festa</h2>
-  <video width="50%" height="auto" controls>
-    <source src="https://github.com/NadjanSF/Festa-Elias/blob/main/video.mp4" type="video/mp4">
-    Seu navegador não suporta o vídeo.
-  </video>
-</div>
-</div>
+
   <div class="w3-container" id="pratos">
-    <h2>Lista de Pratos</h2>
+    <h2>🍽 Lista de Pratos</h2>
     <p>Escolha um prato e coloque seu nome:</p>
     <ul class="w3-ul">
-      <li>
-        <input type="checkbox" id="Arroz doce"> Arroz doce
-        <input type="text" placeholder="Seu nome">
-      </li>
-      <li>
-        <input type="checkbox" id="bolo"> Bolo de milho
-        <input type="text" placeholder="Seu nome">
-      </li>
-      <li>
-        <input type="checkbox" id="cuscuz"> Cuscuz
-        <input type="text" placeholder="Seu nome">
-      </li>
-      <li>
-        <input type="checkbox" id="quentao"> Quentão
-        <input type="text" placeholder="Seu nome">
-      </li>
-      <li>
-        <input type="checkbox" id="pipoca"> Pipoca
-        <input type="text" placeholder="Seu nome">
-      </li>
-      <li>
-        <input type="checkbox" id="doces"> Doces
-        <input type="text" placeholder="Seu nome">
-      </li>
-      <li>
-        <input type="checkbox" id="cachorro quente"> Cachorro Quente
-        <input type="text" placeholder="Seu nome">
-      </li>
+      <li><input type="checkbox"> Arroz doce <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> Bolo de milho <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> Cuscuz <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> Quentão <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> Pipoca <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> Doces <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> Cachorro-quente <input type="text" placeholder="Seu nome"></li>
     </ul>
   </div>
 

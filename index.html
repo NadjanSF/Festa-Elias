@@ -107,7 +107,48 @@
       font-size: 1em;
       color: #FFD700;
     }
+    .carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* largura máxima do carrossel */
+  margin: 0 auto;    /* centraliza o carrossel */
+  overflow: hidden;
+  border-radius: 10px;
+}
 
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0; /* não deixa encolher */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
     @media screen and (max-width: 600px) {
       h1 {
         font-size: 1.8em;
@@ -139,28 +180,24 @@
     <p>Data: à definir - a partir das 19h</p>
   </div>
 
-  <div class="w3-container" id="galeria">
-    <h2>📸 Galeria de Festas Anteriores</h2>
-    <div class="galeria">
-      <a href="https://github.com/NadjanSF/Festa-Elias/blob/main/festa.001.jpg" target="_blank">
-        <img src="festa.001.jpg" alt="festa1">
-      </a>
-      <a href="https://github.com/NadjanSF/Festa-Elias/blob/main/festa1.1.jpg" target="_blank">
-        <img src="festa1.1.jpg" alt="festa2">
-      </a>
-      <a href="https://github.com/NadjanSF/Festa-Elias/blob/main/festa1.jpg" target="_blank">
-        <img src="festa1.jpg" alt="festa3">
-      </a>
-      <a href="https://scontent.fcgh55-1.fna.fbcdn.net/v/t1.6435-9/40495156_10212322840692725_5565804761191546880_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=-omHTHSjH68Q7kNvwEj27VZ&_nc_oc=AdlIKfxt9JH81sseKuDA4KT4Wxk9HsWS3XWmJYLsue6gIZQ7y87vKOUWy1lUmglCEt8&_nc_zt=23&_nc_ht=scontent.fcgh55-1.fna&_nc_gid=ZjCtZSNsJ2cnI4GoTybMCQ&oh=00_AfOjXJH2L41Uq7P5GF0ezb99ZhynAbXZkhEQFDbZvZjGmQ&oe=68714A29" target="_blank">
-        <img src="festa1.jpg" alt="festa4">
-      </a>
+  <div class="w3-container w3-center" id="galeria">
+  <h2>📸 Galeria de Festas Anteriores</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="carousel-slide">
+      <img src="https://raw.githubusercontent.com/NadjanSF/Festa-Elias/main/festa.001.jpg" alt="festa1">
+      <img src="https://raw.githubusercontent.com/NadjanSF/Festa-Elias/main/festa1.1.jpg" alt="festa2">
+      <img src="https://raw.githubusercontent.com/NadjanSF/Festa-Elias/main/festa1.jpg" alt="festa3">
+      <img src="https://github.com/NadjanSF/Festa-Elias/blob/main/festa4.jpg?raw=true" alt="festa4">
     </div>
+    <button class="carousel-btn next">&#10095;</button>
   </div>
+</div>
 
   <div class="w3-container w3-center">
     <h2>🎥 Vídeo da Festa</h2>
-    <video width="90%" controls>
-      <source src="https://github.com/NadjanSF/Festa-Elias/blob/main/video.mp4" type="video/mp4">
+    <video width="75%" controls>
+      <source src="https://github.com/NadjanSF/Festa-Elias/raw/refs/heads/main/video.mp4" type="video/mp4">
       Seu navegador não suporta o vídeo.
     </video>
   </div>
@@ -182,5 +219,27 @@
   <footer class="w3-container w3-center">
     <p>Família Elias &copy; 2025</p>
   </footer>
+ <script>
+  const slide = document.querySelector('.carousel-slide');
+  const images = document.querySelectorAll('.carousel-slide img');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+
+  let counter = 0;
+
+  function updateCarousel() {
+    slide.style.transform = `translateX(${-counter * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    counter = (counter + 1) % images.length; // volta para 0 após o último
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    counter = (counter - 1 + images.length) % images.length; // volta do primeiro para o último
+    updateCarousel();
+  });
+</script>
 </body>
 </html>

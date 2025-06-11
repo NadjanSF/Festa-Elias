@@ -12,18 +12,20 @@
       background-image: url('https://github.com/NadjanSF/Festa-Elias/blob/main/festa1Capa.jpg?raw=true');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: white;
       text-shadow: 1px 1px 3px black;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
 
     .w3-container {
       background-color: rgba(0, 0, 0, 0.65);
       padding: 20px;
-      margin: 10px;
+      margin: 20px auto;
       border-radius: 10px;
+      max-width: 1000px;
     }
 
     h1, h2 {
@@ -38,33 +40,6 @@
 
     a:hover {
       color: #FFFFFF;
-    }
-
-    ul.w3-ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.w3-ul li {
-      background: rgba(255, 255, 255, 0.1);
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-    }
-
-    input[type="text"] {
-      flex: 1;
-      padding: 8px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    input[type="checkbox"] {
-      transform: scale(1.5);
     }
 
     .btn-junina {
@@ -82,89 +57,160 @@
       transform: scale(1.05);
     }
 
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .galeria img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 10px;
-      border: 2px solid white;
-      transition: 0.3s;
-    }
-
-    .galeria img:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 1em;
-      color: #FFD700;
-    }
+    /* Carrossel */
     .carousel-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px; /* largura máxima do carrossel */
-  margin: 0 auto;    /* centraliza o carrossel */
-  overflow: hidden;
-  border-radius: 10px;
-}
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
 
-.carousel-slide {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
 
-.carousel-slide img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  flex-shrink: 0; /* não deixa encolher */
-}
+    .carousel-slide img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-}
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 50%;
+    }
 
-.carousel-btn.prev {
-  left: 10px;
-}
+    .carousel-btn.prev {
+      left: 10px;
+    }
 
-.carousel-btn.next {
-  right: 10px;
-}
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    /* Lista de Pratos */
+    #pratos {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #pratos h2 {
+      color: #FFD700;
+      text-align: center;
+      margin-bottom: 20px;
+      background-color: rgba(218, 165, 32, 0.8);
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 10px;
+    }
+
+    #pratos p {
+      text-align: center;
+      color: white;
+      margin-bottom: 25px;
+    }
+
+    #pratos ul {
+      list-style-type: none;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background-color: rgba(0,0,0,0.3);
+    }
+
+    #pratos li {
+      padding: 12px 15px;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    #pratos li:last-child {
+      border-bottom: none;
+    }
+
+    #pratos li:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    #pratos input[type="checkbox"] {
+      margin-right: 15px;
+      transform: scale(1.3);
+      cursor: pointer;
+    }
+
+    #pratos input[type="text"] {
+      margin-left: auto;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      width: 150px;
+      transition: all 0.3s;
+      background-color: rgba(255,255,255,0.9);
+    }
+
+    #pratos input[type="text"]:focus {
+      outline: none;
+      border-color: #FFD700;
+      box-shadow: 0 0 0 2px rgba(255,215,0,0.2);
+    }
+
+    /* Estilo para itens marcados */
+    #pratos li.checked {
+      background-color: rgba(255,215,0,0.2);
+    }
+
+    #pratos li.checked .prato-nome {
+      text-decoration: line-through;
+      opacity: 0.8;
+    }
+
+    /* Responsivo */
     @media screen and (max-width: 600px) {
       h1 {
         font-size: 1.8em;
       }
-
-      input[type="text"] {
+      
+      .btn-junina {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+      }
+      
+      #pratos input[type="text"] {
         width: 100%;
-        margin-top: 5px;
+        margin-top: 10px;
+      }
+      
+      .carousel-container {
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
   <div class="w3-container w3-center">
-    <h1>Bem-vindos ao Arraiá dos Elias!</h1>
-    <p class="w3-large">Uma festança boa demais da conta, sô!</p>
+    <h1 style="background-color: rgba(255, 69, 0, 0.8); display: inline-block; padding: 10px 20px; border-radius: 15px; border: 3px dashed #FFF; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+      Bem-vindos ao Arraiá dos Elias!
+    </h1>
+    <p class="w3-large">Ocê tá seno convidado pra uma festança pra lá dia boa dimais da conta, sô!</p>
   </div>
 
   <div class="w3-container w3-center">
@@ -176,27 +222,27 @@
 
   <div class="w3-container" id="endereco">
     <h2>📍 Endereço</h2>
-    <p>Casa da Dani?! - SP</p>
-    <p>Data: à definir - a partir das 19h</p>
+    <p class="w3-large">Casa da Dani ! - SP</p>
+    <p class="w3-large">Data: à definir - a partir das 19h</p>
   </div>
 
   <div class="w3-container w3-center" id="galeria">
-  <h2>📸 Galeria de Festas Anteriores</h2>
-  <div class="carousel-container">
-    <button class="carousel-btn prev">&#10094;</button>
-    <div class="carousel-slide">
-      <img src="https://raw.githubusercontent.com/NadjanSF/Festa-Elias/main/festa.001.jpg" alt="festa1">
-      <img src="https://raw.githubusercontent.com/NadjanSF/Festa-Elias/main/festa1.1.jpg" alt="festa2">
-      <img src="https://raw.githubusercontent.com/NadjanSF/Festa-Elias/main/festa1.jpg" alt="festa3">
-      <img src="https://github.com/NadjanSF/Festa-Elias/blob/main/festa4.jpg?raw=true" alt="festa4">
+    <h2>📸 Galeria de Festas Anteriores</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel-slide">
+        <img src="https://raw.githubusercontent.com/NadjanSF/Festa-Elias/main/festa.001.jpg" alt="festa1">
+        <img src="https://raw.githubusercontent.com/NadjanSF/Festa-Elias/main/festa1.1.jpg" alt="festa2">
+        <img src="https://raw.githubusercontent.com/NadjanSF/Festa-Elias/main/festa1.jpg" alt="festa3">
+        <img src="https://github.com/NadjanSF/Festa-Elias/blob/main/festa4.jpg?raw=true" alt="festa4">
+      </div>
+      <button class="carousel-btn next">&#10095;</button>
     </div>
-    <button class="carousel-btn next">&#10095;</button>
   </div>
-</div>
 
   <div class="w3-container w3-center">
     <h2>🎥 Vídeo da Festa</h2>
-    <video width="75%" controls>
+    <video width="100%" controls style="max-width: 600px; display: block; margin: 0 auto; border-radius: 10px;">
       <source src="https://github.com/NadjanSF/Festa-Elias/raw/refs/heads/main/video.mp4" type="video/mp4">
       Seu navegador não suporta o vídeo.
     </video>
@@ -206,40 +252,91 @@
     <h2>🍽 Lista de Pratos</h2>
     <p>Escolha um prato e coloque seu nome:</p>
     <ul class="w3-ul">
-      <li><input type="checkbox"> Arroz doce <input type="text" placeholder="Seu nome"></li>
-      <li><input type="checkbox"> Bolo de milho <input type="text" placeholder="Seu nome"></li>
-      <li><input type="checkbox"> Cuscuz <input type="text" placeholder="Seu nome"></li>
-      <li><input type="checkbox"> Quentão <input type="text" placeholder="Seu nome"></li>
-      <li><input type="checkbox"> Pipoca <input type="text" placeholder="Seu nome"></li>
-      <li><input type="checkbox"> Doces <input type="text" placeholder="Seu nome"></li>
-      <li><input type="checkbox"> Cachorro-quente <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> <span class="prato-nome">Arroz doce</span> <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> <span class="prato-nome">Bolo de milho</span> <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> <span class="prato-nome">Cuscuz</span> <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> <span class="prato-nome">Quentão</span> <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> <span class="prato-nome">Pipoca</span> <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> <span class="prato-nome">Doces</span> <input type="text" placeholder="Seu nome"></li>
+      <li><input type="checkbox"> <span class="prato-nome">Cachorro-quente</span> <input type="text" placeholder="Seu nome"></li>
     </ul>
   </div>
 
   <footer class="w3-container w3-center">
     <p>Família Elias &copy; 2025</p>
   </footer>
- <script>
-  const slide = document.querySelector('.carousel-slide');
-  const images = document.querySelectorAll('.carousel-slide img');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
 
-  let counter = 0;
+  <script>
+    // Carrossel
+    const slide = document.querySelector('.carousel-slide');
+    const images = document.querySelectorAll('.carousel-slide img');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let counter = 0;
+    const size = images[0].clientWidth;
 
-  function updateCarousel() {
-    slide.style.transform = `translateX(${-counter * 100}%)`;
-  }
+    function updateCarousel() {
+      slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }
 
-  nextBtn.addEventListener('click', () => {
-    counter = (counter + 1) % images.length; // volta para 0 após o último
-    updateCarousel();
-  });
+    nextBtn.addEventListener('click', () => {
+      if (counter >= images.length - 1) return;
+      counter++;
+      updateCarousel();
+    });
 
-  prevBtn.addEventListener('click', () => {
-    counter = (counter - 1 + images.length) % images.length; // volta do primeiro para o último
-    updateCarousel();
-  });
-</script>
+    prevBtn.addEventListener('click', () => {
+      if (counter <= 0) return;
+      counter--;
+      updateCarousel();
+    });
+
+    // Auto-rotate carousel
+    setInterval(() => {
+      if (counter >= images.length - 1) {
+        counter = 0;
+      } else {
+        counter++;
+      }
+      updateCarousel();
+    }, 5000);
+
+    // Lista de Pratos
+    document.addEventListener('DOMContentLoaded', function() {
+      const pratosList = document.querySelectorAll('#pratos li');
+      
+      // Carrega dados salvos
+      pratosList.forEach(li => {
+        const checkbox = li.querySelector('input[type="checkbox"]');
+        const inputText = li.querySelector('input[type="text"]');
+        const pratoKey = li.querySelector('.prato-nome').textContent.trim();
+        
+        // Recupera dados do LocalStorage
+        const savedData = JSON.parse(localStorage.getItem(pratoKey)) || {};
+        if (savedData.checked) {
+          checkbox.checked = true;
+          li.classList.add('checked');
+        }
+        if (savedData.nome) {
+          inputText.value = savedData.nome;
+        }
+        
+        // Salva quando houver alteração
+        checkbox.addEventListener('change', function() {
+          li.classList.toggle('checked', this.checked);
+          saveData();
+        });
+        
+        inputText.addEventListener('input', saveData);
+        
+        function saveData() {
+          localStorage.setItem(pratoKey, JSON.stringify({
+            checked: checkbox.checked,
+            nome: inputText.value
+          }));
+        }
+      });
+    });
+  </script>
 </body>
 </html>
